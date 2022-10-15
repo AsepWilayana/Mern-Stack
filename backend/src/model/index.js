@@ -1,12 +1,18 @@
-const mongoose = require("mongoose");
-const Schema = mongoose.Schema;
+import mongoose from "mongoose";
+//const Schema = mongoose.Schema;
 
-const BookSchema = new Schema(
+const BookSchema = mongoose.Schema(
     {
-        judul: {type: String, required: true},
-        pengarang: {type: String, required: true}
-    },
-    {collection: "koleksiBuku"}
+        judul: {
+            type: String,
+            required: true
+        },
+        pengarang: {
+            type: String,
+            required: true
+        }
+    }
+    //{collection: "koleksiBuku"}
 )
 
-module.exports = mongoose.model("BukuModel", BookSchema);
+export default mongoose.model('Books', BookSchema)
